@@ -102,7 +102,9 @@ classDiagram
         - String id
         - List~LearningCourse~ learningCourses
         + getName() String
+        + setName(String name)
         + getId() String
+        + setId(String id)
         + getLearningCourses() List~LearningCourse~
         + addLearningCourse(LearningCourse course)
     }
