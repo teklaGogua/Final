@@ -92,24 +92,33 @@ Then the system adds real courses from Argus, including:
 ```mermaid
 classDiagram
     class UMS {
-        -List<Student> students
-        +addStudent(Student student)
-        +printStudentData(Student student)
+        - List~Student~ students
+        + addStudent(Student student)
+        + printStudentData(Student student)
     }
+
     class Student {
-        -String name
-        -String id
-        -List<LearningCourse> learningCourses
-        +getName() String
-        +addLearningCourse(LearningCourse course)
+        - String name
+        - String id
+        - List~LearningCourse~ learningCourses
+        + getName() String
+        + getId() String
+        + getLearningCourses() List~LearningCourse~
+        + addLearningCourse(LearningCourse course)
     }
+
     class LearningCourse {
-        -String title
-        -String acceptancePrerequisites
-        -String majorTopics
-        +getTitle() String
-        +setTitle(String title)
+        - String title
+        - String acceptancePrerequisites
+        - String majorTopics
+        + getTitle() String
+        + setTitle(String title)
+        + getAcceptancePrerequisites() String
+        + setAcceptancePrerequisites(String prerequisites)
+        + getMajorTopics() String
+        + setMajorTopics(String topics)
     }
+
     UMS "1" --> "*" Student
     Student "1" --> "*" LearningCourse
 ```
